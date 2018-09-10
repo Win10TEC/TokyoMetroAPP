@@ -5,9 +5,7 @@
     require_once dirname(__FILE__) . '/../controller/TrainController.php';
     ?>
 </head>
-
 <body>
-
 <div class="container">
     <h2>時刻表</h2>
     <div class="row">

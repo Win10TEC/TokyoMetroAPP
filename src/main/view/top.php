@@ -26,7 +26,7 @@
                     <h3>時刻表</h3>
                 </div>
                 <div class="card-body">
-                    <a href="/index.php/trainInfo">時刻表</a>
+                    <a href="/index.php/trainTime">時刻表</a>
                 </div>
             </div>
         </div>

@@ -14,6 +14,8 @@ class TrainController
     private $trainTime;
     private $slack;
     private $trainInfoList;
+    private $trainInfoStatusList;
+    private $trainInfoStatus;
     private $trainList;
 
 
@@ -44,19 +46,22 @@ class TrainController
     public function getTrainInfoList()
     {
         $this->trainInfoList = $this->getTrainInfo->getTrainInfoData();
-        //$this->trainInfoStatus = $this->train->getTrainInfoStatus();
+        $this->trainInfoStatusList = $this->getTrainInfo->getTrainInfoStatusData();
         include(dirname(__FILE__). '/../view/trainInfo.php');
     }
 
     public function getTrainTime()
     {
         $this->trainTime = $this->getTrainTime->getTrainTime();
-            include(dirname(__FILE__). '/../view/train.php');
+        include(dirname(__FILE__) . '/../view/trainTime.php');
     }
 
     public function getReminder()
     {
         $this->slack->ReminderTrainInfo($this->getTrainInfo->getTrainInfoData());
         include(dirname(__FILE__). '/../view/reminder.php');
+        $this->slack->ReminderTrainInfo($this->getTrainInfo->getTrainInfoStatusData());
+        include(dirname(__FILE__). '/../view/reminder.php');
     }
+    //$this->trainInfoStatus = $this->getTrainInfo->getTrainInfoStatus();
 }

@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__DIR__) . '/../src/main/model/Train.php';
+require_once dirname(__DIR__) . '/../src/main/model/getTrainInfo.php';
 
 use PHPUnit\Framework\TestCase;
 
@@ -11,14 +11,14 @@ class TrainTest extends TestCase
 
     public function setup()
     {
-        $this->class = new Train();
+        $this->class = new getTrainInfo();
 
         $this->trainData[] = array(
             "date" => "2018-09-02T19:55:21+09:00",
             "valid" =>  "2018-09-02T19:55:51+09:00",
             "frequency" => 30,
             "railway" =>  "odpt.Railway:TokyoMetro.Marunouchi",
-            "sameAs" =>  "odpt.Train:TokyoMetro.Marunouchi.A1943",
+            "sameAs" =>  "odpt.getTrainInfo:TokyoMetro.Marunouchi.A1943",
             "trainNumber" =>  "A1943",
             "trainType" =>  "odpt.TrainType:TokyoMetro.Local",
             "delay" => 0,

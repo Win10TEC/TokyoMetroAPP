@@ -6,7 +6,7 @@ class ApiConnection
 {
     public function getTrain()
     {
-        $url = METRO_URL .'datapoints?rdf:type=odpt:Train&'.METRO_TOKEN;
+        $url = METRO_URL .'datapoints?rdf:type=odpt:getTrainInfo&'.METRO_TOKEN;
 
         $curl = curl_init();
 

@@ -17,13 +17,10 @@ class getTrainTime
     public function getTrainTime()
     {
         $item = null;
-        foreach ($this->apiConnection->getTrainTime() as $item){
+        foreach ($this->apiConnection->getTrainTime() as $item) {
             var_dump($item);
         }
 
         return $item;
-
     }
-
-
 }

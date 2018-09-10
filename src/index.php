@@ -37,6 +37,9 @@ class index
         } elseif ($call === "trainInfo") {
             $this->trainController->getTrainInfoList();
             exit;
+        } elseif ($call === "trainTime") {
+            $this->trainController->getTrainTime();
+            exit;
         } elseif ($call === "reminder") {
             $this->trainController->getReminder();
             exit;

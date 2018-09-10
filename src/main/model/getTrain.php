@@ -5,8 +5,7 @@ require_once dirname(__FILE__) . '/../config/DataConfig.php';
 
 date_default_timezone_set('Asia/Tokyo');
 
-
-class Train
+class getTrain
 {
     private $apiConnection;
 
@@ -27,7 +26,7 @@ class Train
             $railway = str_replace('odpt.Railway:TokyoMetro.', '', $railway);
 
             $sameas = $item["owl:sameAs"];
-            $sameas = str_replace('odpt.Train:', '', $sameas);
+            $sameas = str_replace('odpt.getTrainInfo:', '', $sameas);
 
             $starting = $item["odpt:startingStation"];
             $starting = str_replace('odpt.Station:TokyoMetro.', '', $starting);
@@ -70,33 +69,5 @@ class Train
             );
         }
         return $trainData;
-    }
-
-    public function getTrainInfoData()
-    {
-        $trainInfoData=null;
-
-        foreach ($this->apiConnection->getTrainInfo() as $item) {
-            $operator = $item["odpt:operator"];
-            $operator = str_replace('odpt.Operator:', '', $operator);
-
-            $railway = $item["odpt:railway"];
-            $railway = str_replace('odpt.Railway:TokyoMetro.', '', $railway);
-
-            $t = new DateTime($item["dc:date"]);
-            $t->setTimeZone(new DateTimeZone('Asia/Tokyo'));
-            $datetime =$t->format('Y-m-d H:i');
-
-            $trainInfoData[] = array(
-                "id" => $item["@id"],
-                "date" => $datetime,
-                "valid" => $item["dct:valid"],
-                "operator" => $operator,
-                "railway" => $railway,
-                "timeOfOrigin" => $item["odpt:timeOfOrigin"],
-                "trainInformationText" => $item["odpt:trainInformationText"],
-            );
-        }
-        return $trainInfoData;
     }
 }

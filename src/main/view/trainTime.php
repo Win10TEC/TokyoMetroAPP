@@ -10,6 +10,12 @@
     <h2>時刻表</h2>
     <div class="row">
         <div class="col-md-8">
+            <?php
+            $this->getStationList;
+//            foreach ($this->getStationList as $item){
+//                var_dump($item);
+//            }
+            ?>
         </div>
     </div>
 </div>

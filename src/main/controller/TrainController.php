@@ -3,6 +3,7 @@ require_once dirname(__FILE__) . '/../model/ApiConnection.php';
 require_once dirname(__FILE__) . '/../model/getTrain.php';
 require_once dirname(__FILE__) . '/../model/getTrainInfo.php';
 require_once dirname(__FILE__) . '/../model/getTrainTime.php';
+require_once dirname(__FILE__) . '/../model/getStation.php';
 require_once dirname(__FILE__) . '/../model/Slack.php';
 
 class TrainController
@@ -10,6 +11,9 @@ class TrainController
     private $api;
     private $getTrainInfo;
     private $getTrainTime;
+    private $getTrainTimeList;
+    private $getStation;
+    private $getStationList;
     private $getTrain;
     private $trainTime;
     private $slack;
@@ -24,12 +28,14 @@ class TrainController
                                 \getTrain $getTrain = null,
                                 \getTrainInfo $getTrainInfo = null,
                                 \getTrainTime $getTrainTime = null,
+                                \getStation $getStation = null,
                                 \Slack $slack = null
     ) {
         $this->api = $api ? $api : new \ApiConnection();
         $this->getTrain = $getTrain ? $getTrain : new \getTrain();
         $this->getTrainInfo = $getTrainInfo ? $getTrainInfo : new \getTrainInfo();
         $this->getTrainTime = $getTrainTime ? $getTrainTime : new \getTrainTime();
+        $this->getStation = $getStation ? $getStation : new \getStation();
         $this->slack = $slack ? $slack : new \slack();
     }
 
@@ -53,7 +59,8 @@ class TrainController
 
     public function getTrainTime()
     {
-        $this->trainTime = $this->getTrainTime->getTrainTime();
+        $this->getTrainTimeList = $this->getTrainTime->getTrainTime("TokyoMetro.Marunouchi.Akasakamitsuke");
+        //$this->getStationList = $this->getStation->stationList();
         include(dirname(__FILE__) . '/../view/trainTime.php');
     }
 

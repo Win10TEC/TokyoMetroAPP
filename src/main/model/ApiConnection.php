@@ -46,7 +46,7 @@ class ApiConnection
 
     public function getTrainTime()
     {
-        $url = METRO_URL .'datapoints?rdf:type=odpt:StationTimetable&'.METRO_TOKEN;
+        $url = METRO_URL .'datapoints?rdf:type=odpt:StationTimetable&odpt.Station:TokyoMetro.Hanzomon.OmoteSando&'.METRO_TOKEN;
 
         $curl = curl_init();
 

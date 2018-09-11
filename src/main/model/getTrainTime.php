@@ -18,7 +18,23 @@ class getTrainTime
     {
         $item = null;
         foreach ($this->apiConnection->getTrainTime() as $item) {
-            var_dump($item);
+            $weekday = array(array($item["odpt:weekdays"])
+            );
+
+            var_dump($weekday);
+
+            $trainTime = array(
+               "date" => $item["dc:date"],
+               "sameAs" => $item["owl:sameAs"],
+               "station" => $item["odpt:station"],
+               "railway" => $item["odpt:railway"],
+               "operator" => $item["odpt:operator"],
+               "railDirection" => $item["odpt:railDirection"],
+//               "" => $item[""],
+//               "" => $item[""],
+//               "" => $item[""],
+
+           );
         }
 
         return $item;

@@ -1,7 +1,7 @@
 <html>
 <head>
     <?php require_once dirname(__FILE__) . '/head.php'; ?>
-    <title>Reminder</title>
+    c
 </head>
 <body>
 <div class="container">

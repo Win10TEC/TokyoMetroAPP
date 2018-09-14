@@ -10,9 +10,7 @@
 <body>
 
 <div class="container">
-
     <h1 class="main-title">現在の運行状況<br></h1>
-
     <div class="row">
         <div class="flex-wrap col-md-6">
             <h1 class="main-title">正常<br></h1>

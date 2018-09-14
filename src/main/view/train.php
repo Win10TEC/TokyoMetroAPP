@@ -2,7 +2,6 @@
 <head>
     <?php
     require_once dirname(__FILE__) . '/../view/head.php';
-    require_once dirname(__FILE__) . '/../controller/TrainController.php';
     ?>
 </head>
 

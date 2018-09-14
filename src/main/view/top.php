@@ -4,9 +4,7 @@
     <?php require_once dirname(__FILE__) . '/head.php'; ?>
     <title>TOP</title>
 </head>
-
 <body>
-
 <div class="container">
     <h1>TOP</h1>
     <div class="row">

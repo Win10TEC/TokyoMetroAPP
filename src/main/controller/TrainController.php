@@ -21,6 +21,7 @@ class TrainController
     private $trainInfoStatusList;
     private $trainInfoStatus;
     private $trainList;
+    private $stationList;
 
 
     public function __construct(
@@ -57,17 +58,21 @@ class TrainController
         include(dirname(__FILE__). '/../view/trainInfo.php');
     }
 
-    public function getTrainTime()
+    public function getTrainTime($get)
     {
-        $this->getTrainTimeList = $this->getTrainTime->getTrainTime("TokyoMetro.Marunouchi.Akasakamitsuke");
-        //$this->getStationList = $this->getStation->stationList();
-        include(dirname(__FILE__) . '/../view/trainTime.php');
+        $station = null;
+
+        $this->stationList = $this->getStation->stationList();
+        if (!empty($get)) {
+            $str =implode($get);
+            $this->getTrainTimeList = $this->getTrainTime->getTrainTimeList($str);
+            include(dirname(__FILE__) . '/../view/trainTime.php');
+        }
     }
 
     public function getReminder()
     {
         $this->slack->ReminderTrainInfo($this->getTrainInfo->getTrainInfoData());
-        include(dirname(__FILE__). '/../view/reminder.php');
         $this->slack->ReminderTrainInfo($this->getTrainInfo->getTrainInfoStatusData());
         include(dirname(__FILE__). '/../view/reminder.php');
     }

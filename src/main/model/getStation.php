@@ -27,7 +27,7 @@ class getStation
             $railway = $item["odpt:railway"];
             $railway = str_replace('odpt.Railway:', '', $railway);
 
-            $StationDate = array(
+            $StationDate[] = array(
                 "date" => $item["dc:date"],
                 "title" => $item["dc:title"],
                 "sameAs" => $sameAs,
@@ -51,12 +51,69 @@ class getStation
             $sameAs = $item["owl:sameAs"];
             $sameAs = str_replace('odpt.Station:', '', $sameAs);
 
-            $station[] = array(
-                "title" => $item["dc:title"],
-                "sameAs" => $sameAs,
-            );
+            if (strpos($sameAs, 'TokyoMetro.Marunouchi') !== false) {
+                $station[] = array(
+                    "title" => $item["dc:title"],
+                    "railway" => "丸ノ内線",
+                    "sameAs" => $sameAs,
+                );
+            } elseif (strpos($sameAs, 'TokyoMetro.Ginza') !== false) {
+                $station[] = array(
+                    "title" => $item["dc:title"],
+                    "railway" => "銀座線",
+                    "sameAs" => $sameAs,
+                );
+            } elseif (strpos($sameAs, 'TokyoMetro.Hibiya') !== false) {
+                $station[] = array(
+                    "title" => $item["dc:title"],
+                    "railway" => "日比谷線",
+                    "sameAs" => $sameAs,
+                );
+            } elseif (strpos($sameAs, 'TokyoMetro.Chiyoda') !== false) {
+                $station[] = array(
+                    "title" => $item["dc:title"],
+                    "railway" => "千代田線",
+                    "sameAs" => $sameAs,
+                );
+            } elseif (strpos($sameAs, 'TokyoMetro.Tozai') !== false) {
+                $station[] = array(
+                    "title" => $item["dc:title"],
+                    "railway" => "東西線",
+                    "sameAs" => $sameAs,
+                );
+            } elseif (strpos($sameAs, 'TokyoMetro.Hanzomon') !== false) {
+                $station[] = array(
+                    "title" => $item["dc:title"],
+                    "railway" => "半蔵門",
+                    "sameAs" => $sameAs,
+                );
+            } elseif (strpos($sameAs, 'TokyoMetro.Namboku') !== false) {
+                $station[] = array(
+                    "title" => $item["dc:title"],
+                    "railway" => "南北線",
+                    "sameAs" => $sameAs,
+                );
+            } elseif (strpos($sameAs, 'TokyoMetro.Fukutoshin') !== false) {
+                $station[] = array(
+                    "title" => $item["dc:title"],
+                    "railway" => "副都心線",
+                    "sameAs" => $sameAs,
+                );
+            } elseif (strpos($sameAs, 'TokyoMetro.Yurakucho') !== false) {
+                $station[] = array(
+                    "title" => $item["dc:title"],
+                    "railway" => "有楽町線",
+                    "sameAs" => $sameAs,
+                );
+            } else {
+                $station[] = array(
+                    "title" => "存在しません",
+                    "railway" => "存在しません",
+                    "sameAs" => "存在しません",
+                );
+            }
         }
-        var_dump($station);
-        return $station;
+        $json = json_encode($station, true | JSON_UNESCAPED_UNICODE);
+        return $json;
     }
 }

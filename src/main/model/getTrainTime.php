@@ -14,12 +14,12 @@ class getTrainTime
         $this->apiConnection = $apiConnection ? $apiConnection : new ApiConnection();
     }
 
-    public function getTrainTime($get)
+    public function getTrainTimeList($station)
     {
         $weekdays = null;
         $trainTime = null;
 
-        foreach ($this->apiConnection->getTrainTime($get) as $item) {
+        foreach ($this->apiConnection->getTrainTime($station) as $item) {
             $t = new DateTime($item["dc:date"]);
             $t->setTimeZone(new DateTimeZone('Asia/Tokyo'));
             $datetime = $t->format('Y-m-d H:i');
@@ -52,8 +52,8 @@ class getTrainTime
                     "destinationStation" => $destinationStation,
                     "trainType" => $trainType,
                 );
-                
-                $trainTime = array(
+
+                $trainTime[] = array(
                     "date" => $datetime,
                     "sameAs" => $sameAs,
                     "station" => $station,

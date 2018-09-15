@@ -116,16 +116,18 @@ class getTrainInfo
             $t->setTimeZone(new DateTimeZone('Asia/Tokyo'));
             $datetime = $t->format('Y-m-d H:i');
 
-            $trainInfoData[] = array(
-                "id" => $item["@id"],
-                "date" => $datetime,
-                "valid" => $item["dct:valid"],
-                "operator" => $operator,
-                "railway" => $railway,
-                "timeOfOrigin" => $item["odpt:timeOfOrigin"],
-                "trainInformationStatus" => $item["odpt:trainInformationStatus"],
-                "trainInformationText" => $item["odpt:trainInformationText"],
-            );
+            if (!empty($item["odpt:trainInformationStatus"])) {
+                $trainInfoData[] = array(
+                    "id" => $item["@id"],
+                    "date" => $datetime,
+                    "valid" => $item["dct:valid"],
+                    "operator" => $operator,
+                    "railway" => $railway,
+                    "timeOfOrigin" => $item["odpt:timeOfOrigin"],
+                    "trainInformationStatus" => $item["odpt:trainInformationStatus"],
+                    "trainInformationText" => $item["odpt:trainInformationText"],
+                );
+            }
         }
         return $trainInfoData;
     }

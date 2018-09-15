@@ -4,9 +4,7 @@
     <?php require_once dirname(__FILE__) . '/head.php'; ?>
     <title>TOP</title>
 </head>
-
 <body>
-
 <div class="container">
     <h1>TOP</h1>
     <div class="row">
@@ -26,7 +24,7 @@
                     <h3>時刻表</h3>
                 </div>
                 <div class="card-body">
-                    <a href="/index.php/trainInfo">時刻表</a>
+                    <a href="/index.php/trainTime">時刻表</a>
                 </div>
             </div>
         </div>

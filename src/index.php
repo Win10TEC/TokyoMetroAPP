@@ -11,7 +11,7 @@ class index
         $this->trainController = $trainController ? $trainController : new \TrainController();
     }
 
-    public function mapUrl($server)
+    public function mapUrl($server, $get, $post)
     {
         if (empty($server["PATH_INFO"])) {
             $this->trainController->topPage();
@@ -38,7 +38,7 @@ class index
             $this->trainController->getTrainInfoList();
             exit;
         } elseif ($call === "trainTime") {
-            $this->trainController->getTrainTime();
+            $this->trainController->getTrainTime($get);
             exit;
         } elseif ($call === "reminder") {
             $this->trainController->getReminder();
@@ -48,4 +48,4 @@ class index
 }
 
 $class = new index();
-$class->mapUrl($_SERVER);
+$class->mapUrl($_SERVER, $_GET, $_POST);

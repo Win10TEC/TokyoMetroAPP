@@ -20,7 +20,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-md-12">
             <br><h2>時刻表</h2><br>
             <p>駅名を入力してください。</p>
             <form class="form-inline input-group" action="/index.php/trainTime"  method="get">
@@ -33,13 +33,34 @@
 	            </span>
             </form>
             <h2><br>検索結果</h2>
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                    <tr><th>時間</th><th>行き先</th><th>タイプ</th></tr>
+                    </thead>
             <?php
-
-            //var_dump($this->getTrainTimeList );
             foreach ($this->getTrainTimeList as $item) {
                 var_dump($item);
             }
+            foreach ($this->trainTimeList as $item) {
+                echo '<tbody>';
+                echo '<tr>';
+                echo '<td>';
+                echo $item["departureTime"];
+                echo '</td>';
+                echo '<td>';
+                echo $item["destinationStation"];
+                echo '</td>';
+                echo '<td>';
+                echo $item["trainType"];
+                echo '</td>';
+                echo '</tr>';
+                echo '</tbody>';
+            }
+
             ?>
+                </table>
+            </div>
         </div>
     </div>
 </div>

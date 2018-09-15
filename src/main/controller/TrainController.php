@@ -10,12 +10,10 @@ class TrainController
 {
     private $api;
     private $getTrainInfo;
-    private $getTrainTime;
     private $getTrainTimeList;
+    private $trainTimeList;
     private $getStation;
-    private $getStationList;
     private $getTrain;
-    private $trainTime;
     private $slack;
     private $trainInfoList;
     private $trainInfoStatusList;
@@ -28,14 +26,14 @@ class TrainController
         \ApiConnection $api = null,
                                 \getTrain $getTrain = null,
                                 \getTrainInfo $getTrainInfo = null,
-                                \getTrainTime $getTrainTime = null,
+                                \getTrainTime $getTrainTimeList = null,
                                 \getStation $getStation = null,
                                 \Slack $slack = null
     ) {
         $this->api = $api ? $api : new \ApiConnection();
         $this->getTrain = $getTrain ? $getTrain : new \getTrain();
         $this->getTrainInfo = $getTrainInfo ? $getTrainInfo : new \getTrainInfo();
-        $this->getTrainTime = $getTrainTime ? $getTrainTime : new \getTrainTime();
+        $this->getTrainTimeList = $getTrainTimeList ? $getTrainTimeList : new \getTrainTime();
         $this->getStation = $getStation ? $getStation : new \getStation();
         $this->slack = $slack ? $slack : new \slack();
     }
@@ -65,7 +63,11 @@ class TrainController
         $this->stationList = $this->getStation->stationList();
         if (!empty($get)) {
             $str =implode($get);
-            $this->getTrainTimeList = $this->getTrainTime->getTrainTimeList($str);
+            $this->getTrainTimeList->getTrainTimeList($str);
+            $this->trainTimeList = $this->getTrainTimeList->timeTablesWeekday($str);
+            include(dirname(__FILE__) . '/../view/trainTime.php');
+        } else {
+            $this->getTrainTimeList = array();
             include(dirname(__FILE__) . '/../view/trainTime.php');
         }
     }

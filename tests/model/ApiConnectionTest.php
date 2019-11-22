@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__FILE__) . '/../model/ApiConnectionTest.php';
+require_once dirname(__DIR__) . '/../src/main/model/ApiConnection.php';
 
 use PHPUnit\Framework\TestCase;
 

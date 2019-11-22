@@ -29,21 +29,20 @@ class TrainTest extends TestCase
         );
     }
 
-    public function testGetTrainData()
-    {
-        $this->setup();
-        $class = new getTrainInfo();
-        $trclass = new getTrain();
-        $expect = count($class->getTrainInfoData());
-        $this->assertSame($expect, count($trclass->getTrainData()));
-    }
+//    public function testGetTrainData()
+//    {
+//        $class = new getTrain();
+//        $this->setup();
+//        $expect = count($class->getTrainData());
+//        $this->assertSame($expect, count($class->getTrainData()));
+//    }
 
     public function testGetTrainInfoData()
     {
-        $this->setup();
+
         $class = new getTrainInfo();
-        $trclass = new getTrain();
+        $this->setup();
         $expect = count($class->getTrainInfoData());
-        $this->assertSame($expect, count($trclass->getTrainData()));
+        $this->assertSame($expect, count($class->getTrainInfoData()));
     }
 }

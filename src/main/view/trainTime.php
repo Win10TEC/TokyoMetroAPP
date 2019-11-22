@@ -39,25 +39,22 @@
                     <tr><th>時間</th><th>行き先</th><th>タイプ</th></tr>
                     </thead>
             <?php
-          //  var_dump($this->TrainTimeList($_GET));
-            foreach ($this->stationList as $item) {
-                var_dump($item);
+            var_dump($this->TrainTimeList());
+            foreach ($this->trainTimeList as $item) {
+                echo '<tbody>';
+                echo '<tr>';
+                echo '<td>';
+                echo $item["departureTime"];
+                echo '</td>';
+                echo '<td>';
+                echo $item["destinationStation"];
+                echo '</td>';
+                echo '<td>';
+                echo $item["trainType"];
+                echo '</td>';
+                echo '</tr>';
+                echo '</tbody>';
             }
-//            foreach ($this->trainTimeList as $item) {
-//                echo '<tbody>';
-//                echo '<tr>';
-//                echo '<td>';
-//                echo $item["departureTime"];
-//                echo '</td>';
-//                echo '<td>';
-//                echo $item["destinationStation"];
-//                echo '</td>';
-//                echo '<td>';
-//                echo $item["trainType"];
-//                echo '</td>';
-//                echo '</tr>';
-//                echo '</tbody>';
-//            }
 
             ?>
                 </table>

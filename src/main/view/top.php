@@ -38,16 +38,16 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Reminder</h3>
-                </div>
-                <div class="card-body">
-                    <a href="/index.php/reminder">Reminder</a>
-                </div>
-            </div>
-        </div>
+<!--        <div class="col-md-4">-->
+<!--            <div class="card">-->
+<!--                <div class="card-header">-->
+<!--                    <h3>Reminder</h3>-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <a href="/index.php/reminder">Reminder</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </div>
 </body>

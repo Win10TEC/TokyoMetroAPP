@@ -22,12 +22,25 @@
 <link rel="stylesheet" href="/../../resource/css/style.css">
 
 <script type="text/javascript" src="/../../resource/js/bootstrap.min.js"></script>
-
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <!-- Navbar content -->
-    <a class="navbar-brand">電車情報</a>
-<!--    <form class="form-inline">-->
-<!--        <input class="form-control" type="text" placeholder="Search">-->
-<!--        <button class="btn btn-outline-primary" type="submit">Search</button>-->
-<!--    </form>-->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="../index.php">TrainInfo 電車情報</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+<!--            <li class="nav-item active">-->
+<!--                <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>-->
+<!--            </li>-->
+            <li class="nav-item">
+                <a class="nav-link" href="/index.php/trainTime">時刻表</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/index.php/train">電車内情報</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+        </ul>
+    </div>
 </nav>

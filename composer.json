@@ -7,10 +7,9 @@
             "email": "win10.labch@gmail.com"
         }
     ],
-    "require-dev": {
-        "phpunit/phpunit": "^6.5"
-    },
     "require": {
-        "friendsofphp/php-cs-fixer": "^2.13"
+        "phpunit/phpunit": "^6.5",
+        "friendsofphp/php-cs-fixer": "^2.13",
+        "vlucas/phpdotenv": "1.1"
     }
 }

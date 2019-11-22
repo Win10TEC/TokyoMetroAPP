@@ -1,6 +1,7 @@
 <?php
 
 require_once dirname(__DIR__) . '/../src/main/model/getTrainInfo.php';
+require_once dirname(__DIR__) . '/../src/main/model/getTrain.php';
 
 use PHPUnit\Framework\TestCase;
 
@@ -32,15 +33,17 @@ class TrainTest extends TestCase
     {
         $this->setup();
         $class = new getTrainInfo();
+        $trclass = new getTrain();
         $expect = count($class->getTrainInfoData());
-        $this->assertSame($expect, count($class->getTrainInfoData()));
+        $this->assertSame($expect, count($trclass->getTrainData()));
     }
 
     public function testGetTrainInfoData()
     {
         $this->setup();
         $class = new getTrainInfo();
+        $trclass = new getTrain();
         $expect = count($class->getTrainInfoData());
-        $this->assertSame($expect, count($class->getTrainInfoData()));
+        $this->assertSame($expect, count($trclass->getTrainData()));
     }
 }

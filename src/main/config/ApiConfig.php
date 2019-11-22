@@ -1,8 +1,6 @@
 <?php
-$dotenv = new Dotenv\Dotenv(__DIR__ . '/..');
-$dotenv->load(__DIR__ . '/..');
 
-$mtrurl= getenv('METRO_URL');
+$mtrurl = getenv('METRO_URL');
 $mtrkey= getenv('METRO_TOKEN');
 $slackurl= getenv('SLACK_POST_URL');
 $slackkey= getenv('SLACK_TOKEN');

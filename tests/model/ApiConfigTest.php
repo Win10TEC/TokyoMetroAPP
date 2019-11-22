@@ -2,10 +2,10 @@
 //$dotenv = new Dotenv\Dotenv(__DIR__ . '/..');
 //$dotenv->load(__DIR__ . '~/');
 
-$env = file_get_contents('.\.env');
-$encoded_env = base64_encode($env);
-
-echo $encoded_env;
+//$env = file_get_contents('.\.env');
+//$encoded_env = base64_encode($env);
+//
+//echo $encoded_env;
 
 $mtrurl= getenv('METRO_URL');
 $mtrkey= getenv('METRO_TOKEN');

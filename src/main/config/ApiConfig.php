@@ -1,5 +1,10 @@
 <?php
 
+require '../vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::create(__DIR__);
+$dotenv->load();
+
 $mtrurl = getenv('METRO_URL');
 $mtrkey= getenv('METRO_TOKEN');
 $slackurl= getenv('SLACK_POST_URL');

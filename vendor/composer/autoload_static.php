@@ -176,6 +176,16 @@ class ComposerStaticInita73ed17bded18954fd362ed449b48cb1
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'PhpOption\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoption/phpoption/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
@@ -783,6 +793,7 @@ class ComposerStaticInita73ed17bded18954fd362ed449b48cb1
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInita73ed17bded18954fd362ed449b48cb1::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInita73ed17bded18954fd362ed449b48cb1::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInita73ed17bded18954fd362ed449b48cb1::$prefixesPsr0;
             $loader->classMap = ComposerStaticInita73ed17bded18954fd362ed449b48cb1::$classMap;
 
         }, null, ClassLoader::class);

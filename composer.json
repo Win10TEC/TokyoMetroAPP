@@ -10,6 +10,6 @@
     "require": {
         "phpunit/phpunit": "^6.5",
         "friendsofphp/php-cs-fixer": "^2.13",
-        "vlucas/phpdotenv": "2.0"
+        "vlucas/phpdotenv": "^3.6"
     }
 }

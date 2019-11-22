@@ -1,18 +1,16 @@
 <?php
 
 require_once dirname(__DIR__) . '/../src/main/model/getTrainInfo.php';
+require_once dirname(__DIR__) . '/../src/main/model/getTrain.php';
 
 use PHPUnit\Framework\TestCase;
 
 class TrainTest extends TestCase
 {
     private $trainData;
-    private $class;
 
     public function setup()
     {
-        $this->class = new getTrainInfo();
-
         $this->trainData[] = array(
             "date" => "2018-09-02T19:55:21+09:00",
             "valid" =>  "2018-09-02T19:55:51+09:00",
@@ -31,17 +29,20 @@ class TrainTest extends TestCase
         );
     }
 
-    public function testGetTrainData()
-    {
-        $this->setup();
-        $expect = count($this->class->getTrainData());
-        $this->assertSame($expect, count($this->class->getTrainData()));
-    }
+//    public function testGetTrainData()
+//    {
+//        $class = new getTrain();
+//        $this->setup();
+//        $expect = count($class->getTrainData());
+//        $this->assertSame($expect, count($class->getTrainData()));
+//    }
 
     public function testGetTrainInfoData()
     {
+
+        $class = new getTrainInfo();
         $this->setup();
-        $expect = count($this->class->getTrainInfoData());
-        $this->assertSame($expect, count($this->class->getTrainInfoData()));
+        $expect = count($class->getTrainInfoData());
+        $this->assertSame($expect, count($class->getTrainInfoData()));
     }
 }

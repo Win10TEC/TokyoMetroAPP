@@ -17,4 +17,11 @@
             </exclude>
         </whitelist>
     </filter>
+    <!--<php>-->
+        <!--<env name="APP_ENV" value="testing" force="true"/>-->
+        <!--<env name="CACHE_DRIVER" value="array" force="true"/>-->
+        <!--<env name="SESSION_DRIVER" value="array" force="true"/>-->
+        <!--<env name="QUEUE_DRIVER" value="sync" force="true"/>-->
+        <!--<env name="DB_DATABASE" value="db_test" force="true"/>-->
+    <!--</php>-->
 </phpunit>

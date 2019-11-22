@@ -1,5 +1,5 @@
 .idea/
 .php_cs.cache
-src/main/config/
+.env
 vendor/
 composer.lock

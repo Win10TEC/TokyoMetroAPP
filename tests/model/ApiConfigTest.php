@@ -1,6 +1,6 @@
 <?php
-$dotenv = new Dotenv\Dotenv(__DIR__ . '/');
-$dotenv->load(__DIR__ . '/');
+$dotenv = new Dotenv\Dotenv(__DIR__ . '/..');
+$dotenv->load(__DIR__ . '~/');
 
 $mtrurl= getenv('METRO_URL');
 $mtrkey= getenv('METRO_TOKEN');

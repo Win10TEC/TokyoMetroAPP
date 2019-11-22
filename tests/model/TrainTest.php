@@ -11,8 +11,6 @@ class TrainTest extends TestCase
 
     public function setup()
     {
-        $this->class = new getTrainInfo();
-
         $this->trainData[] = array(
             "date" => "2018-09-02T19:55:21+09:00",
             "valid" =>  "2018-09-02T19:55:51+09:00",
@@ -34,14 +32,16 @@ class TrainTest extends TestCase
     public function testGetTrainData()
     {
         $this->setup();
-        $expect = count($this->class->getTrainData());
-        $this->assertSame($expect, count($this->class->getTrainData()));
+        $class = new getTrainInfo();
+        $expect = count($class->getTrainInfoData());
+        $this->assertSame($expect, count($class->getTrainData()));
     }
 
     public function testGetTrainInfoData()
     {
         $this->setup();
-        $expect = count($this->class->getTrainInfoData());
-        $this->assertSame($expect, count($this->class->getTrainInfoData()));
+        $class = new getTrainInfo();
+        $expect = count($class->getTrainInfoData());
+        $this->assertSame($expect, count($class->getTrainInfoData()));
     }
 }

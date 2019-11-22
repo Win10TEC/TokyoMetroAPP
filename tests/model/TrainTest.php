@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 class TrainTest extends TestCase
 {
     private $trainData;
-    private $class;
 
     public function setup()
     {
@@ -34,7 +33,7 @@ class TrainTest extends TestCase
         $this->setup();
         $class = new getTrainInfo();
         $expect = count($class->getTrainInfoData());
-        $this->assertSame($expect, count($class->getTrainData()));
+        $this->assertSame($expect, count($class->getTrainInfoData()));
     }
 
     public function testGetTrainInfoData()

@@ -39,7 +39,6 @@ class TrainTest extends TestCase
 
     public function testGetTrainInfoData()
     {
-
         $class = new getTrainInfo();
         $this->setup();
         $expect = count($class->getTrainInfoData());

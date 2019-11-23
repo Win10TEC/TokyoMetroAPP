@@ -24,11 +24,11 @@ class TrainController
 
     public function __construct(
         \ApiConnection $api = null,
-                                \getTrain $getTrain = null,
-                                \getTrainInfo $getTrainInfo = null,
-                                \getTrainTime $getTrainTimeList = null,
-                                \getStation $getStation = null,
-                                \Slack $slack = null
+        \getTrain $getTrain = null,
+        \getTrainInfo $getTrainInfo = null,
+        \getTrainTime $getTrainTimeList = null,
+        \getStation $getStation = null,
+        \Slack $slack = null
     ) {
         $this->api = $api ? $api : new \ApiConnection();
         $this->getTrain = $getTrain ? $getTrain : new \getTrain();

@@ -23,7 +23,7 @@
 
 <script type="text/javascript" src="/../../resource/js/bootstrap.min.js"></script>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="../index.php">TrainInfo 電車情報</a>
+    <a class="navbar-brand" href="../index.php">電車情報 / TrainInfo</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,13 +33,13 @@
 <!--                <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>-->
 <!--            </li>-->
             <li class="nav-item">
-                <a class="nav-link" href="/index.php/trainTime">時刻表</a>
+                <a class="nav-link" href="/index.php/trainTime">時刻表 / Time</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/index.php/train">電車内情報</a>
+                <a class="nav-link" href="/index.php/train">電車内情報 / TrainInf</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">ヘルプ / Help</a>
             </li>
         </ul>
     </div>

@@ -9,7 +9,7 @@
 
 TokyoMetroAPI :https://developer.tokyometroapp.jp/info
 
-Document→準備中
+Document :README
 
 ※API使用には注意が必要。
 

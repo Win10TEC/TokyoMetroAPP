@@ -6,7 +6,12 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="main-title">現在の運行状況<br></h1>
+    <br>
+    <div class="alert alert-primary" role="alert">
+        <h4 class="alert-heading">現在の運行状況 / Current operation status</h4>
+        <span>路線名をクリックすると、運行状況が確認できます。</span>
+        <span>Click the route name to check the operation status.</span>
+    </div>
     <div class="accordion" id="accordion2" role="tablist">
         <?php
         require_once dirname(__DIR__) . '/controller/TrainController.php';

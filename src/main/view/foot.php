@@ -1,4 +1,4 @@
-<!-- footer:s -->
+<!-- footer -->
 <div class="d-flex justify-content-between flex-wrap bg-dark p-4">
     <ul class="list-inline">
         <li class="list-inline-item pl-2 border-left border-light">

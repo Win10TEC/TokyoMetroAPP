@@ -1,3 +1,4 @@
+<!-- header -->
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,9 +30,6 @@
     </button>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
-<!--            <li class="nav-item active">-->
-<!--                <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>-->
-<!--            </li>-->
             <li class="nav-item">
                 <a class="nav-link" href="/index.php/trainTime">時刻表 / Time</a>
             </li>
@@ -44,3 +42,4 @@
         </ul>
     </div>
 </nav>
+<!-- header -->

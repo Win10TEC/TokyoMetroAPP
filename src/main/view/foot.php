@@ -19,4 +19,4 @@
         <small>&copy;電車情報 / TrainInfo</small>
     </div>
 </div>
-<!-- footer:e -->
+<!-- footer -->
